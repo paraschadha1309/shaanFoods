@@ -1,0 +1,72 @@
+@model ShaanFoods.Models.CustomerOrder
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>CustomerOrder</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="OrderId" />
+        <div class="form-group">
+            <label asp-for="CustomerName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerName" class="form-control" />
+                <span asp-validation-for="CustomerName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerPhone" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerPhone" class="form-control" />
+                <span asp-validation-for="CustomerPhone" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="OrderStatus" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="OrderStatus" class="form-control" />
+                <span asp-validation-for="OrderStatus" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PickupDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PickupDate" class="form-control" />
+                <span asp-validation-for="PickupDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PickupTime" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PickupTime" class="form-control" />
+                <span asp-validation-for="PickupTime" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

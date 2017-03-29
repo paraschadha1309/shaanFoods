@@ -1,0 +1,37 @@
+@model ShaanFoods.Models.OrderDetails
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderQuantity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderQuantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderWeight)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderWeight)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.OrderDetailsId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
